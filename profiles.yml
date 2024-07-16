@@ -1,0 +1,14 @@
+data_pipeline:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: kd30072.central-india.azure
+      user: "{{ env_var('usr') }}"
+      password: "{{ env_var('pwd') }}"
+      role: Accountadmin
+      database: dbt_db
+      warehouse: dbt_wh
+      schema: dbt_schema
+      threads: 10
+      client_session_keep_alive: False
